@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input, button {
+            font-size: 18px;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        #add {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        #subtract {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        #multiply {
+            background-color: #f39c12;
+            color: #fff;
+        }
+
+        #divide {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculator</h1>
+
+    <label for="num1">Enter Number 1: </label>
+    <input type="number" id="num1">
+
+    <br>
+
+    <label for="num2">Enter Number 2: </label>
+    <input type="number" id="num2">
+
+    <br>
+
+    <button id="add" onclick="add()">Add</button>
+    <button id="subtract" onclick="subtract()">Subtract</button>
+    <button id="multiply" onclick="multiply()">Multiply</button>
+    <button id="divide" onclick="divide()">Divide</button>
+
+    <script>
+        function add() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            alert(`Result: ${num1 + num2}`);
+        }
+
+        function subtract() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            alert(`Result: ${num1 - num2}`);
+        }
+
+        function multiply() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            alert(`Result: ${num1 * num2}`);
+        }
+
+        function divide() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            
+            if (num2 !== 0) {
+                alert(`Result: ${num1 / num2}`);
+            } else {
+                alert("Error: Cannot divide by zero");
+            }
+        }
+    </script>
+
+</body>
+</html>
